@@ -1,0 +1,27 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage[margin=1in]{geometry}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setdefaultlanguage{thai}
+\setmainfont{Noto Sans Thai}
+\title{คณิตศาสตร์เบื้องหลังการเคลื่อนที่ในเกม 2D}
+\author{Prompt Lab}
+\date{2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+บทความสั้นนี้อธิบายว่าตำแหน่ง ความเร็ว และช่วงเวลาเชื่อมโยงกันอย่างไรใน Game loop และเหตุใดการตรวจการชนจึงสามารถอธิบายด้วยกรอบสี่เหลี่ยมและอสมการได้
+\end{abstract}
+\section{การเคลื่อนที่ตามเวลา}
+เมื่อผู้เล่นมีตำแหน่งเริ่มต้น $(x_t,y_t)$ และความเร็ว $(v_x,v_y)$ ตำแหน่งในเฟรมถัดไปคำนวณได้จาก
+\[
+x_{t+1}=x_t+v_x\Delta t,\qquad y_{t+1}=y_t+v_y\Delta t.
+\]
+\section{เงื่อนไขการชน}
+วัตถุสองชิ้นชนกันเมื่อกรอบสี่เหลี่ยมของทั้งสองทับซ้อนกันในแกน $x$ และแกน $y$ ตัวอย่างเงื่อนไขในแกน $x$ คือ
+\[
+x_1<x_2+w_2\;\land\;x_1+w_1>x_2.
+\]
+ในโค้ด JavaScript สามารถนำแนวคิดนี้ไปใช้ในฟังก์ชัน \texttt{overlaps()} และตรวจแกน $y$ เพิ่มเติมก่อนตัดสินว่าผู้เล่นชนเหรียญหรือสิ่งกีดขวาง
+\end{document}

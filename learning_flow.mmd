@@ -1,0 +1,12 @@
+flowchart LR
+    A[รับ Input: Arrow / WASD] --> B[Update ตำแหน่งผู้เล่น]
+    B --> C[ตรวจ Collision]
+    C --> D[อัปเดตคะแนนและชีวิต]
+    D --> E[Render Canvas + HUD]
+    E --> F{ชนะหรือแพ้?}
+    F -- เล่นต่อ --> A
+    F -- จบเกม --> G[แสดงผลและ Restart]
+
+    style A fill:#E8F7F5,stroke:#0F8B8D,stroke-width:2px
+    style F fill:#FFF2E5,stroke:#F28F3B,stroke-width:2px
+    style G fill:#EAF1FF,stroke:#2E6DE6,stroke-width:2px
